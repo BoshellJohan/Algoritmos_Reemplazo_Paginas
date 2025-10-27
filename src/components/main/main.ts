@@ -46,30 +46,9 @@ export class Main implements OnInit {
     }, 4000)
   }
 
-
-
-  editProcess(process_id:number){
-    this.processService.getProcessByID(process_id, this.processesActives)
-    .then(res_process => {
-      if (res_process) {
-        console.log('Proceso encontrado:', res_process);
-        res_process['edit'] = true;
-      } else {
-        console.log('No se encontró el proceso');
-      }
-    });
-  }
-
-  updateProcess(process_id:number){
-    this.processService.getProcessByID(process_id, this.processesActives)
-    .then(res_process => {
-      if (res_process) {
-        // console.log('Proceso actualizado:', res_process);
-        res_process['edit'] = false;
-      } else {
-        console.log('No se encontró el proceso');
-      }
-    });
+  updateProcesses(processes:any){
+    this.processesActives = processes;
+    this.processesActives = [...this.processesActives];
   }
 
   addProcess() {
@@ -96,17 +75,6 @@ export class Main implements OnInit {
     } else {
       this.activeMessage("Añade un número válido.");
     }
-  }
-
-  deleteProcess(process_id:number){
-    this.processService.deleteProcess(process_id, this.processesActives)
-    .then((res_process:any) => {
-      if (res_process) {
-        this.processesActives = res_process;
-      } else {
-        console.log('No se encontró el proceso');
-      }
-    });
   }
 
   updateCantidadMarcos(){
@@ -259,8 +227,6 @@ export class Main implements OnInit {
   });
 
   this.nextId = this.processesActives.length;
-  console.log(this.nextId)
   }
-
 }
 

@@ -1,7 +1,7 @@
 .algorithmContainer{
     width: fit-content;
     height: auto;
-    border: 1px solid black;
+    border: 2px solid black;
     padding: 0.5rem;
     border-radius: 0.5rem;
     background: #F3F4F6;
@@ -173,4 +173,8 @@ input.rowNumber:focus {
 .message {
     color: white;
     padding: 0.5rem 0.8rem;
+}
+
+.failsContainer > p {
+    font-weight: bold;
 }

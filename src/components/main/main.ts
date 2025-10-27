@@ -21,8 +21,8 @@ export class Main implements OnInit {
 
   //Algorithms
   showFIFOAlgorithm:boolean = true;
-  showBITAlgorithm:boolean = true;
-  showLRUAlgorithm:boolean = true;
+  showBITAlgorithm:boolean = false;
+  showLRUAlgorithm:boolean = false;
 
   //Message
   message:string = ""

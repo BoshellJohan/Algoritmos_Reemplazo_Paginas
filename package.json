@@ -8,7 +8,7 @@
     "build:ssr": "ng build --ssr",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:so_project": "node dist/so_project/server/server.mjs"
+    "serve:ssr:so_reemplazo": "node dist/so_reemplazo/server/server.mjs"
   },
   "private": true,
   "dependencies": {

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "so_project": {
+    "so_reemplazo": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -61,10 +61,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "so_project:build:production"
+              "buildTarget": "so_reemplazo:build:production"
             },
             "development": {
-              "buildTarget": "so_project:build:development"
+              "buildTarget": "so_reemplazo:build:development"
             }
           },
           "defaultConfiguration": "development"

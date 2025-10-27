@@ -1,0 +1,46 @@
+<div class="algorithmContainer">
+  <div class="algorithmTitle">
+    <h1 class="titleAlgorithm">{{titleAlgorithm}}</h1>
+  </div>
+  <div class="header">
+    @for(item of processes; track item.id){
+    <div class="cell">
+      <button type="button" title="edit">Edit</button>
+      <input
+        class="rowNumber"
+        [disabled]="!item.edit"
+        [(ngModel)]="item.number"
+        placeholder="Número"
+        title="processNumber"
+      />
+    </div>
+    }
+  </div>
+
+  <div class="bodyContainer">
+    @for(item of array; track $index){
+    <div class="column">
+      @for(cell of item.data; track $index){
+      <div class="cell">
+        @if(cell == null){
+        <span class="empty"></span>
+        } @else {
+        <span>{{cell}}</span>
+        }
+      </div>
+      }
+      <div class="result cell">
+        @if(item.result == 'failed'){
+        <span class="failed"></span>
+        } @else {
+        <span class="success"></span>
+        }
+      </div>
+    </div>
+    }
+  </div>
+
+  <div class="failsContainer">
+    <p>Número de fallos: {{cantidadFallos}}</p>
+  </div>
+</div>

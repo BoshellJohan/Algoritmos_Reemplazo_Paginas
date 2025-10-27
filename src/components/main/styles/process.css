@@ -1,0 +1,64 @@
+.processesContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 1rem 1rem 0 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.6rem;
+    width: fit-content;
+    height: fit-content;
+    background-color: #fff;
+}
+
+.headerProcesses {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.processTitle{
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+}
+
+.bodyContainer {
+    padding: 0rem 1rem 1rem 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+}
+
+.algorithmContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.algorithmName {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+
+
+.messageContainer {
+    position: absolute;
+    top: 1.5rem;
+    left: 1rem;
+    background-color: #df6e6e;
+    border-radius: 0.4rem;
+    transition: 1s background-color;
+    opacity: 0.8;
+}
+
+.message {
+    color: white;
+    padding: 0.5rem 0.8rem;
+}

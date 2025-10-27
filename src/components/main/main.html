@@ -1,0 +1,93 @@
+<div class="main">
+  <h1>Algoritmo de Reemplazo de Páginas</h1>
+
+  <!-- Mensaje -->
+  @if(showMessage){
+    <div class="messageContainer">
+      <p class="message">{{message}}</p>
+    </div>
+  }
+
+  <!-- Sección superior -->
+  <div class="top-section">
+    <div class="formContainer">
+      <p class="formTitle">Configuración</p>
+      <div class="inputsContainer">
+        <div class="inputContainer">
+          <div class="input">
+            <label for="name">Número de Proceso</label>
+            <input type="number" title="number" id="newnumber" placeholder="6" [(ngModel)]="newProcess.number" />
+          </div>
+          <button type="button" title="addProcess" (click)="addProcess()">
+          Añadir
+          </button>
+        </div>
+
+        <div class="inputContainer">
+          <div class="input">
+            <label for="name">Cantidad de marcos</label>
+            <input type="number" title="marcos" id="marcos" placeholder="3" [(ngModel)]="newCantidadMarcos" />
+          </div>
+          <button type="button" title="updateFrames" (click)="updateCantidadMarcos()">
+          Actualizar cantidad de marcos
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="processesContainer">
+      <div class="headerProcesses">
+        <p class="processTitle">Algoritmos</p>
+      </div>
+      <div class="bodyContainer">
+        <div class="algorithmContainer">
+          <p class="algorithmName">FIFO</p>
+          <button type="button" title="showButton">Mostrar</button>
+        </div>
+
+        <div class="algorithmContainer">
+          <p class="algorithmName">LRU</p>
+          <button type="button" title="showButton">Mostrar</button>
+        </div>
+
+        <div class="algorithmContainer">
+          <p class="algorithmName">Bit de Referencia</p>
+          <button type="button" title="showButton">Mostrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección inferior -->
+  <div class="bottom-section">
+    <div class="algorithmsContainer">
+        @if(showFIFOAlgorithm){
+            <app-algorithm
+                [processes]="processesActives"
+                titleAlgorithm="FIFO"
+                [maxCapacity]="maxCapacity"
+                [cantidadMarcos]="cantidadMarcos"
+            ></app-algorithm>
+        }
+
+        @if(showLRUAlgorithm){
+            <app-algorithm
+            [processes]="processesActives"
+            titleAlgorithm="LRU"
+            [maxCapacity]="maxCapacity"
+            [cantidadMarcos]="cantidadMarcos"
+            ></app-algorithm>
+        }
+
+        @if(showBITAlgorithm){
+            <app-algorithm
+            [processes]="processesActives"
+            titleAlgorithm="BIT"
+            [maxCapacity]="maxCapacity"
+            [cantidadMarcos]="cantidadMarcos"
+            ></app-algorithm>
+        }
+    </div>
+
+  </div>
+</div>

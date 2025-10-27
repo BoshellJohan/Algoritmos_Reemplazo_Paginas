@@ -1,11 +1,45 @@
 <div class="algorithmContainer">
   <div class="algorithmTitle">
     <h1 class="titleAlgorithm">{{titleAlgorithm}}</h1>
+    @if(showMessage){
+      <div class="messageContainer">
+        <p class="message">{{message}}</p>
+      </div>
+    }
   </div>
   <div class="header">
     @for(item of processes; track item.id){
     <div class="cell">
-      <button type="button" title="edit">Edit</button>
+      <div class="btnContainer">
+        @if(item.edit){
+        <button
+          type="button"
+          title="save"
+          class="save"
+          (click)="updatePage(item.id)"
+        >
+          <span class="material-icons icon">save</span>
+        </button>
+        } @else {
+        <button
+          type="button"
+          title="edit"
+          class="edit"
+          (click)="editPage(item.id)"
+        >
+          <span class="material-icons icon">edit</span>
+        </button>
+        }
+
+        <button
+          type="button"
+          title="delete"
+          class="delete"
+          (click)="deleteProcess(item.id)"
+        >
+          <span class="material-icons icon">delete</span>
+        </button>
+      </div>
       <input
         class="rowNumber"
         [disabled]="!item.edit"

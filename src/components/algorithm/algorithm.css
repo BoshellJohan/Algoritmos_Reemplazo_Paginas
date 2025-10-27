@@ -8,21 +8,31 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+.algorithmTitle {
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-between;
+}
+
 .titleAlgorithm {
     font-size: 1.5rem;
     margin: 1rem 0rem;
 }
 
-.bodyContainer {
+.algorithmContainer {
+    max-width: 60rem;
     overflow-x: auto;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE 10+ */
+}
+
+.bodyContainer {
+    padding: 0rem 1rem 1rem 1rem;
 }
 
 .header {
     display: flex;
     flex-flow: row nowrap;
     gap: 1rem;
+    padding: 0rem 1rem 0rem 1rem;
 }
 
 .cell {
@@ -87,4 +97,80 @@ span {
 
 .success {
     background-color: green;
+}
+
+.btnContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.2rem;
+}
+
+.btnContainer > button {
+    border-style: none;
+    border-radius: 0.2rem;
+}
+
+.btnContainer > .edit {
+    background-color: rgb(114, 211, 114);
+    color: #F3F4F6;
+}
+
+.btnContainer > .edit:hover {
+    cursor: pointer;
+    background-color: rgb(103, 185, 103);
+}
+
+.btnContainer > .save {
+    background-color: rgb(97, 190, 226);
+    color: #F3F4F6;
+}
+
+.btnContainer > .save:hover {
+    cursor: pointer;
+    background-color: rgb(99, 186, 197);
+}
+
+.btnContainer > .delete {
+    background-color: rgb(233, 87, 87);
+    color: #F3F4F6;
+}
+
+.btnContainer > .delete:hover {
+    cursor: pointer;
+    background-color: rgb(202, 86, 82);
+}
+
+.icon {
+    font-size: 1rem;
+    padding: 0.2rem;
+}
+
+input.rowNumber:disabled {
+  background: #e5e7eb;
+  cursor: not-allowed;
+}
+
+input.rowNumber:not(:disabled) {
+  background: rgb(255, 255, 255);
+  border-style: none;
+  border: 2px solid #5e5d5d;
+  color: black;
+}
+
+input.rowNumber:focus {
+  outline: 1px solid #e1aaf1;
+  background: #ffffff;
+}
+
+.messageContainer {
+    height: fit-content;
+    background-color: #df6e6e;
+    border-radius: 0.4rem;
+    transition: 1s background-color;
+    opacity: 0.8;
+}
+
+.message {
+    color: white;
+    padding: 0.5rem 0.8rem;
 }

@@ -13,7 +13,7 @@ export class Process {
 
   deleteProcess(id:number, processes:any[]): Promise<any>{
     return new Promise(resolve => {
-      const result = processes.filter((p:any) => p.id.toLowerCase() != id)
+      const result = processes.filter((p:any) => p.id != id)
       resolve(result);
     });
   }

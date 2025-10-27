@@ -1,7 +1,4 @@
 import { Injectable } from '@angular/core';
-import { SelectMultipleControlValueAccessor } from '@angular/forms';
-import { AnyTxtRecord } from 'dns';
-import { last } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',

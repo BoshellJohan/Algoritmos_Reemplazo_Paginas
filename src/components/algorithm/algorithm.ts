@@ -47,6 +47,7 @@ export class AlgorithmChart implements OnInit{
   @Output() updateProcessesEvent = new EventEmitter<any>();
 
   array:any = [];
+  bitArray:any = [];
   ngOnInit(): void {
     this.recalculate();
   }
@@ -58,6 +59,7 @@ export class AlgorithmChart implements OnInit{
     this.array = this.algorithms.LRU(this._processes, this._cantidadMarcos);
   } else if (this.titleAlgorithm === 'BIT') {
     this.array = this.algorithms.BIT(this._processes, this._cantidadMarcos);
+    this.bitArray = this.algorithms.bitArray(this._processes, this._cantidadMarcos);
   }
 
   this.cantidadFallos = 0; // reiniciar antes de contar

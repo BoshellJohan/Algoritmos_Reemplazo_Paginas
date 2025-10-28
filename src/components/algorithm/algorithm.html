@@ -52,14 +52,23 @@
   </div>
 
   <div class="bodyContainer">
-    @for(item of array; track $index){
+    @for(item of array; let j = $index; track j){
     <div class="column">
-      @for(cell of item.data; track $index){
+      @for(cell of item.data; let i = $index; track i){
       <div class="cell">
         @if(cell == null){
         <span class="empty"></span>
         } @else {
-        <span>{{cell}}</span>
+        <span class="content">
+            <div class="number">{{cell}}</div>
+            @if(titleAlgorithm == "BIT"){
+            <span class="bit">
+              @if(bitArray[j][i] == 1){
+                *
+              }
+            </span>
+            }
+        </span>
         }
       </div>
       }

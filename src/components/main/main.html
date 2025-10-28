@@ -73,9 +73,20 @@
           </button>
         </div>
 
+        <div class="algorithmContainer">
+          <p class="algorithmName">MRU</p>
+          <button type="button" title="showButton" (click)="toggleMRUAlgorithm()">
+            @if(showMRUAlgorithm){
+                Esconder
+              } @else {
+                Mostrar
+              }
+          </button>
+        </div>
+
         <!--Empty-->
         <div class="emptyMessageContainer">
-          @if(!showFIFOAlgorithm && !showLRUAlgorithm && !showBITAlgorithm){
+          @if(!showFIFOAlgorithm && !showLRUAlgorithm && !showBITAlgorithm && !showMRUAlgorithm){
             <p class="emptyMessage">No se están mostrando algoritmos en éste momento.</p>
           }
         </div>
@@ -110,6 +121,16 @@
             <app-algorithm
             [processes]="processesActives"
             titleAlgorithm="BIT"
+            [maxCapacity]="maxCapacity"
+            [cantidadMarcos]="cantidadMarcos"
+            (updateProcessesEvent)="updateProcesses($event)"
+            ></app-algorithm>
+        }
+
+         @if(showMRUAlgorithm){
+            <app-algorithm
+            [processes]="processesActives"
+            titleAlgorithm="MRU"
             [maxCapacity]="maxCapacity"
             [cantidadMarcos]="cantidadMarcos"
             (updateProcessesEvent)="updateProcesses($event)"

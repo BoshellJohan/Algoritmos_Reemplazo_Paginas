@@ -253,7 +253,48 @@ export class Algorithms {
     return result;
   }
 
-  includesProcess(processes: any, id: number) {
-    return processes.find((p: any) => p['id'] == id);
+  MRU(processes: any[], framesAmount:number) {
+    if(framesAmount) this.cantidadMarcos = framesAmount;
+    const nums = this.getNumbers(processes);
+
+    const frames = Array(this.cantidadMarcos).fill(null);
+    let queue: number[] = []; // índices de entrada
+
+    const result: any[] = [];
+
+    let nextFree = 0;
+
+    nums.forEach((p: any) => {
+      // ¿Entra?
+      const idxHit = frames.indexOf(p);
+      if (idxHit !== -1) {
+        // SUCCESS — no sale nadie
+
+        let idxFrame = frames.indexOf(p);
+        let idxQueue = queue.indexOf(idxFrame);
+        queue = this.deleteIdx(queue, idxQueue);
+
+        result.push({ data: [...frames], result: 'success' });
+        return;
+      }
+
+      // MISS — hay que meter p
+      if (nextFree < this.cantidadMarcos) {
+        // Aún hay huecos
+        frames[nextFree] = p;
+        queue.push(nextFree);
+        nextFree++;
+      } else {
+        // lleno → expulsar
+
+        const idx = queue.pop()!;
+        frames[idx] = p;
+        queue.push(idx);
+      }
+
+      result.push({ data: [...frames], result: 'failed' });
+    });
+
+    return result;
   }
 }

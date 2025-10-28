@@ -60,6 +60,8 @@ export class AlgorithmChart implements OnInit{
   } else if (this.titleAlgorithm === 'BIT') {
     this.array = this.algorithms.BIT(this._processes, this._cantidadMarcos);
     this.bitArray = this.algorithms.bitArray(this._processes, this._cantidadMarcos);
+  } else if (this.titleAlgorithm === 'MRU') {
+    this.array = this.algorithms.MRU(this._processes, this._cantidadMarcos);
   }
 
   this.cantidadFallos = 0; // reiniciar antes de contar

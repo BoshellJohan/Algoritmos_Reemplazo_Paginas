@@ -23,6 +23,7 @@ export class Main implements OnInit {
   showFIFOAlgorithm:boolean = true;
   showBITAlgorithm:boolean = false;
   showLRUAlgorithm:boolean = false;
+  showMRUAlgorithm:boolean = false;
 
   //Message
   message:string = ""
@@ -107,6 +108,13 @@ export class Main implements OnInit {
     }
   }
 
+  verifyMRU(){
+    if(this.processesActives.length == 0){
+      this.activeMessage('Add a new process to continue')
+      this.showMRUAlgorithm = false;
+    }
+  }
+
   toggleFIFOAlgorithm(){
     this.showFIFOAlgorithm = !this.showFIFOAlgorithm;
     if(this.showFIFOAlgorithm){
@@ -128,53 +136,60 @@ export class Main implements OnInit {
     }
   }
 
+  toggleMRUAlgorithm(){
+    this.showMRUAlgorithm = !this.showMRUAlgorithm;
+    if(this.showMRUAlgorithm){
+      this.verifyMRU();
+    }
+  }
+
 
   ngOnInit(): void {
     this.processesActives.push({
     "id": 0,
-    "number": 7,
+    "number": 6,
     "edit": false,
   });
 
     this.processesActives.push({
     "id": 1,
-    "number": 0,
-    "edit": false,
-  });
-
-  this.processesActives.push({
-    "id": 2,
     "number": 1,
     "edit": false,
   });
 
   this.processesActives.push({
+    "id": 2,
+    "number": 7,
+    "edit": false,
+  });
+
+  this.processesActives.push({
     "id": 3,
-    "number": 2,
+    "number": 1,
     "edit": false,
   });
 
     this.processesActives.push({
     "id": 4,
-    "number": 0,
+    "number": 2,
     "edit": false,
   });
 
   this.processesActives.push({
     "id": 5,
-    "number": 3,
+    "number": 1,
     "edit": false,
   });
 
   this.processesActives.push({
     "id": 6,
-    "number": 0,
+    "number": 5,
     "edit": false,
   });
 
     this.processesActives.push({
     "id": 7,
-    "number": 4,
+    "number": 6,
     "edit": false,
   });
 
@@ -186,19 +201,19 @@ export class Main implements OnInit {
 
     this.processesActives.push({
     "id": 9,
-    "number": 3,
+    "number": 1,
     "edit": false,
   });
 
   this.processesActives.push({
     "id": 10,
-    "number": 0,
+    "number": 7,
     "edit": false,
   });
 
     this.processesActives.push({
     "id": 11,
-    "number": 3,
+    "number": 1,
     "edit": false,
   });
 
@@ -210,7 +225,7 @@ export class Main implements OnInit {
 
   this.processesActives.push({
     "id": 13,
-    "number": 1,
+    "number": 6,
     "edit": false,
   });
 
@@ -222,7 +237,7 @@ export class Main implements OnInit {
 
   this.processesActives.push({
     "id": 15,
-    "number": 0,
+    "number": 7,
     "edit": false,
   });
 
